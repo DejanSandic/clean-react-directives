@@ -13,7 +13,10 @@
 		"dev": "rollup --config --watch",
 		"lint:fix": "prettier-eslint \"src/*\" \"test/*\" --write"
 	},
-	"pre-commit": [ "test", "lint:fix" ],
+	"pre-commit": [
+		"test",
+		"lint:fix"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/DejanSandic/clean-react.git"
@@ -24,9 +27,20 @@
 		"url": "https://github.com/DejanSandic/clean-react/issues"
 	},
 	"homepage": "https://github.com/DejanSandic/clean-react#readme",
-	"keywords": [ "react", "directives", "conditions", "r-if", "r-if-else", "r-else", "r-html", "r-class" ],
+	"keywords": [
+		"react",
+		"directives",
+		"conditions",
+		"r-if",
+		"r-if-else",
+		"r-else",
+		"r-html",
+		"r-class"
+	],
 	"devDependencies": {
+		"@types/classnames": "^2.2.9",
 		"@types/jest": "^24.0.15",
+		"@types/react": "^16.9.13",
 		"eslint": "^5.16.0",
 		"eslint-config-standard": "^12.0.0",
 		"eslint-plugin-import": "^2.17.3",
@@ -40,7 +54,9 @@
 		"rimraf": "^2.6.3",
 		"rollup": "^1.15.6",
 		"rollup-plugin-babel": "^4.3.2",
+		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-license": "^0.12.1",
+		"rollup-plugin-node-resolve": "^5.2.0",
 		"rollup-plugin-terser": "5.1.2",
 		"rollup-plugin-typescript2": "^0.22.0",
 		"ts-jest": "^24.0.2",
@@ -49,5 +65,9 @@
 	"peerDependencies": {},
 	"engines": {
 		"node": ">=8"
+	},
+	"dependencies": {
+		"classnames": "^2.2.6",
+		"react": "^16.12.0"
 	}
 }
