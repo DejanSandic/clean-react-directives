@@ -1,5 +1,5 @@
 {
-	"name": "react-clean",
+	"name": "clean-react",
 	"version": "0.0.1",
 	"description": "Vue-like syntax for ReactJS",
 	"main": "dist/index.cjs.js",
@@ -16,14 +16,14 @@
 	"pre-commit": [ "test", "lint:fix" ],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/DejanSandic/react-clean.git"
+		"url": "git+https://github.com/DejanSandic/clean-react.git"
 	},
 	"author": "Dejan Sandic - Deyo",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/DejanSandic/react-clean/issues"
+		"url": "https://github.com/DejanSandic/clean-react/issues"
 	},
-	"homepage": "https://github.com/DejanSandic/react-clean#readme",
+	"homepage": "https://github.com/DejanSandic/clean-react#readme",
 	"keywords": [ "react", "directives", "conditions", "r-if", "r-if-else", "r-else", "r-html", "r-class" ],
 	"devDependencies": {
 		"@types/jest": "^24.0.15",
