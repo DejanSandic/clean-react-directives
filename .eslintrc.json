@@ -1,0 +1,7 @@
+{
+   "extends": "standard",
+   "rules": {
+       "indent": ["error", 3],
+       "semi": ["error", "always"]
+   }
+}
