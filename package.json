@@ -1,6 +1,6 @@
 {
 	"name": "clean-react-directives",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Vue-like syntax for ReactJS",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.es.js",
@@ -29,6 +29,7 @@
 		"@types/classnames": "^2.2.9",
 		"@types/jest": "^24.0.15",
 		"@types/react": "^16.9.13",
+		"classnames": "^2.2.6",
 		"eslint": "^5.16.0",
 		"eslint-config-standard": "^12.0.0",
 		"eslint-plugin-import": "^2.17.3",
@@ -55,7 +56,6 @@
 		"node": ">=8"
 	},
 	"dependencies": {
-		"classnames": "^2.2.6",
 		"react": "^16.12.0"
 	}
 }

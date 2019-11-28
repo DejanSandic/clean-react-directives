@@ -47,8 +47,6 @@ export default function CleanReact ({ children, deep }: Props) {
  * Main function
  */
 function applyDirectives (children: ReactNode, deep: boolean): ReactNode {
-   if (!React.isValidElement(children)) return children;
-
    let last = false;
 
    return Children.map(children, child => {
