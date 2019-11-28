@@ -11,19 +11,16 @@ export default {
 	output: [
 		{
 			file: 'dist/index.cjs.js',
-			format: 'cjs',
-			sourcemap: 'inline'
+			format: 'cjs'
 		},
 		{
 			file: 'dist/index.es.js',
-			format: 'esm',
-			sourcemap: 'inline'
+			format: 'esm'
 		},
 		{
 			name: 'lib',
 			file: 'dist/index.umd.js',
 			format: 'umd',
-			sourcemap: 'inline',
 			globals: {
 				react: 'React',
 				classnames: 'classnames'
