@@ -2,15 +2,15 @@ import React, { createElement, Fragment, Children, ReactNode } from 'react';
 import classNames from 'classnames';
 
 /**
- * In create-react-app in DEVELOPMENT mode, when passing a prop in the format `prop-name`
- * to the react component, react expects value of that prop to be a string
+ * In the create-react-app in DEVELOPMENT mode, when passing a prop in the format `prop-name`
+ * the react component, React expects the value of that prop to be a string
  *
- * Since we are passing non-boolean values to props r-if, r-else-if, r-else and r-show,
- * react will throw an error ( Received `true` for a non-boolean attribute `r-if` )
+ * Since we are passing non-boolean values to the directives r-if, r-else-if, r-else,
+ * and r-show, React will throw an error ( Received `true` for a non-boolean attribute `r-if` )
  *
- * For this reason we need ignore thrown error message if it is related to our library.
- * This is not ass cleen as we would like it to be, but unfortunately it is
- * the only solutioin we have at this point
+ * For this reason, we need to ignore the thrown error message if it is related to our library.
+ * This is not ass clean as we would like it to be, but unfortunately, it is
+ * the only solution we have at this point
  */
 if (process && process.env && !process.env.rif && process.env.NODE_ENV === 'development') {
    const error = console.error;
@@ -54,7 +54,7 @@ function applyDirectives (children: ReactNode, deep: boolean): ReactNode {
 
       /**
        * When checking children, we want to stop when we run into CleanReact
-       * component because it does its own directive checking
+       * component because it does its directive checking
        */
       if (child.type === CleanReact) return child;
 
