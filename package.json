@@ -1,6 +1,6 @@
 {
 	"name": "clean-react-directives",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Vue-like syntax for ReactJS",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.es.js",
