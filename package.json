@@ -1,6 +1,6 @@
 {
 	"name": "clean-react-directives",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Vue-like syntax for ReactJS",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.es.js",
@@ -24,7 +24,7 @@
 		"url": "https://github.com/DejanSandic/clean-react-directives/issues"
 	},
 	"homepage": "https://github.com/DejanSandic/clean-react-directives#readme",
-	"keywords": [ "react", "directives", "conditions", "r-if", "r-if-else", "r-else", "r-html", "r-class" ],
+	"keywords": [ "react", "directives", "conditions", "r-if", "r-else-if", "r-else", "r-html", "r-class" ],
 	"devDependencies": {
 		"@types/classnames": "^2.2.9",
 		"@types/jest": "^24.0.15",
