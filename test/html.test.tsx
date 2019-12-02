@@ -2,11 +2,10 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { cleanup, render } from '@testing-library/react';
 import CleanReact from '../src/index';
-import { disableError } from './utils';
 
 describe('r-html', () => {
-   beforeEach(disableError);
    afterEach(cleanup);
+
    console.error = (err: any) => {
       try {
          throw new Error(err);

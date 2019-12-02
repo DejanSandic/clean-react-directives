@@ -2,10 +2,8 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { cleanup, render } from '@testing-library/react';
 import CleanReact from '../src/index';
-import { disableError } from './utils';
 
 describe('r-show', () => {
-   beforeEach(disableError);
    afterEach(cleanup);
 
    it('should add style "display: none" to the component if provided condition is false', () => {

@@ -12,7 +12,7 @@ import classNames from 'classnames';
  * This is not ass clean as we would like it to be, but unfortunately, it is
  * the only solution we have at this point
  */
-if (process && process.env && !process.env.rif && process.env.NODE_ENV === 'development') {
+if (process && process.env && !process.env.rif && process.env.NODE_ENV !== 'production') {
    const error = console.error;
 
    console.error = (...args: string[]) => {
