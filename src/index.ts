@@ -2,37 +2,6 @@ import React, { createElement, Fragment, Children, ReactNode } from 'react';
 import classNames from 'classnames';
 
 /**
- * In the create-react-app in DEVELOPMENT mode, when passing a prop in the format `prop-name`
- * the react component, React expects the value of that prop to be a string
- *
- * Since we are passing non-boolean values to the directives r-if, r-else-if, r-else,
- * and r-show, React will throw an error ( Received `true` for a non-boolean attribute `r-if` )
- *
- * For this reason, we need to ignore the thrown error message if it is related to our library.
- * This is not ass clean as we would like it to be, but unfortunately, it is
- * the only solution we have at this point
- */
-if (process && process.env && !process.env.rif && process.env.NODE_ENV !== 'production') {
-   const error = console.error;
-
-   console.error = (...args: string[]) => {
-      const nonBoolean = args[0].includes('non-boolean');
-
-      if (nonBoolean) {
-         const libRelated = args.some((arg: string) => {
-            const conditions = ['r-if', 'r-else-if', 'r-else', 'r-show', 'r-class'];
-            return conditions.some(condition => arg.includes(condition));
-         });
-         if (libRelated) return;
-      }
-
-      error(...args);
-   };
-
-   process.env.rif = 'true';
-}
-
-/**
  * Export default HOC component
  */
 interface Props {
@@ -128,10 +97,44 @@ function applyDirectives (children: ReactNode, deep: boolean): ReactNode {
        * props of the child component
        */
       if (cloningRequired) {
-         ['r-else', 'r-else-if', 'r-if', 'r-show', 'r-class', 'r-html'].forEach(d => delete props[d]);
+         libProps.forEach(prop => delete props[prop]);
          child = createElement(child.type, { ...props, ...props }, children);
       }
 
       return child;
    });
+}
+
+/**
+ * Library related props
+ */
+const libProps = ['r-if', 'r-else-if', 'r-else', 'r-show', 'r-class', 'r-html'];
+
+/**
+ * In the create-react-app in DEVELOPMENT mode, when passing a prop in the format `prop-name`
+ * the react component, React expects the value of that prop to be a string
+ *
+ * Since we are passing non-boolean values to the directives r-if, r-else-if, r-else,
+ * and r-show, React will throw an error ( Received `true` for a non-boolean attribute `r-if` )
+ *
+ * For this reason, we need to ignore the thrown error message if it is related to our library.
+ * This is not ass clean as we would like it to be, but unfortunately, it is
+ * the only solution we have at this point
+ */
+if (process && process.env && !process.env.rif && process.env.NODE_ENV !== 'production') {
+   const error = console.error;
+
+   console.error = (...args: string[]) => {
+      function includesString (text: any, string: string) {
+         if (typeof text !== 'string') return false;
+         return text.includes(string);
+      }
+
+      const nonBoolean = args.some(arg => includesString(arg, 'non-boolean'));
+      const libRelated = args.some((arg: string) => libProps.some(prop => includesString(arg, prop)));
+
+      if (!nonBoolean || !libRelated) error(...args);
+   };
+
+   process.env.rif = 'true';
 }
