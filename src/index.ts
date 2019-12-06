@@ -98,7 +98,7 @@ function applyDirectives (children: ReactNode, deep: boolean): ReactNode {
        */
       if (cloningRequired) {
          libProps.forEach(prop => delete props[prop]);
-         child = createElement(child.type, { ...props, ...props }, children);
+         child = createElement(child.type, { ...props }, children);
       }
 
       return child;
