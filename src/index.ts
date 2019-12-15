@@ -82,7 +82,7 @@ function applyDirectives (children: ReactNode, deep: boolean): ReactNode {
       let relse = 'r-else' in props && 'r-else';
 
       if ((rif && relseif) || (rif && relse) || (relseif && relse)) {
-         throw 'You cannot combine r-if, r-else-if and r-else on the same component';
+         throw new Error('You cannot combine r-if, r-else-if and r-else on the same component');
       }
 
       if (rif) {
@@ -94,7 +94,7 @@ function applyDirectives (children: ReactNode, deep: boolean): ReactNode {
       if (relseif || relse) {
          if (lastCon !== 'r-if' && lastCon !== 'r-else-if') {
             lastCon = relseif || relse;
-            throw `${lastCon} can only be placed after r-if or r-else-if`;
+            throw new Error(`${lastCon} can only be placed after r-if or r-else-if`);
          }
 
          if ((!relse && !props[relseif]) || last) return null;

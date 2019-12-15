@@ -61,7 +61,7 @@ describe('r-if, r-else-if, r-else', () => {
             </CleanReact>
          );
       } catch (err) {
-         expect(err.toString()).toBe('r-else-if can only be placed after r-if or r-else-if');
+         expect(err.message).toBe('r-else-if can only be placed after r-if or r-else-if');
       }
 
       try {
@@ -71,7 +71,7 @@ describe('r-if, r-else-if, r-else', () => {
             </CleanReact>
          );
       } catch (err) {
-         expect(err.toString()).toBe('r-else can only be placed after r-if or r-else-if');
+         expect(err.message).toBe('r-else can only be placed after r-if or r-else-if');
       }
    });
 
@@ -85,7 +85,7 @@ describe('r-if, r-else-if, r-else', () => {
             </CleanReact>
          );
       } catch (err) {
-         expect(err.toString()).toBe('You cannot combine r-if, r-else-if and r-else on the same component');
+         expect(err.message).toBe('You cannot combine r-if, r-else-if and r-else on the same component');
       }
 
       try {
@@ -97,7 +97,7 @@ describe('r-if, r-else-if, r-else', () => {
             </CleanReact>
          );
       } catch (err) {
-         expect(err.toString()).toBe('You cannot combine r-if, r-else-if and r-else on the same component');
+         expect(err.message).toBe('You cannot combine r-if, r-else-if and r-else on the same component');
       }
 
       try {
@@ -109,7 +109,7 @@ describe('r-if, r-else-if, r-else', () => {
             </CleanReact>
          );
       } catch (err) {
-         expect(err.toString()).toBe('You cannot combine r-if, r-else-if and r-else on the same component');
+         expect(err.message).toBe('You cannot combine r-if, r-else-if and r-else on the same component');
       }
    });
 });
