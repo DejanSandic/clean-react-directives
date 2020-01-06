@@ -1,6 +1,6 @@
 {
 	"name": "clean-react-directives",
-	"version": "0.0.7",
+	"version": "0.0.71",
 	"description": "Vue-like syntax for ReactJS",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.es.js",
@@ -13,10 +13,7 @@
 		"dev": "rollup --config --watch",
 		"lint:fix": "prettier-eslint \"src/*\" \"test/*\" --write"
 	},
-	"pre-commit": [
-		"test",
-		"lint:fix"
-	],
+	"pre-commit": [ "test", "lint:fix" ],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/DejanSandic/clean-react-directives.git"
@@ -27,16 +24,7 @@
 		"url": "https://github.com/DejanSandic/clean-react-directives/issues"
 	},
 	"homepage": "https://github.com/DejanSandic/clean-react-directives#readme",
-	"keywords": [
-		"react",
-		"directives",
-		"conditions",
-		"r-if",
-		"r-else-if",
-		"r-else",
-		"r-html",
-		"r-class"
-	],
+	"keywords": [ "react", "directives", "conditions", "r-if", "r-else-if", "r-else", "r-html", "r-class" ],
 	"devDependencies": {
 		"@rollup/plugin-node-resolve": "^6.0.0",
 		"@testing-library/jest-dom": "^4.2.4",
@@ -55,6 +43,7 @@
 		"pre-commit": "^1.2.2",
 		"prettier-eslint": "^9.0.0",
 		"prettier-eslint-cli": "^5.0.0",
+		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
 		"rimraf": "^2.6.3",
 		"rollup": "^1.15.6",
@@ -66,11 +55,10 @@
 		"ts-jest": "^24.0.2",
 		"typescript": "^3.5.3"
 	},
-	"peerDependencies": {},
+	"peerDependencies": {
+		"react": "^16.12.0"
+	},
 	"engines": {
 		"node": ">=8"
-	},
-	"dependencies": {
-		"react": "^16.12.0"
 	}
 }
