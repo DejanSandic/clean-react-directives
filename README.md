@@ -1,6 +1,6 @@
 # clean-react-directives
 Vue-like syntax for ReactJS
-[CodeSandbox demo](https://codesandbox.io/s/wandering-sunset-uouen?file=/src/styles.css)
+[CodeSandbox demo](https://codesandbox.io/s/wandering-sunset-uouen?file=/src/App.js)
 
 # Quick look
 ```jsx
